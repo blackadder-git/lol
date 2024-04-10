@@ -1,0 +1,76 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="advent-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Name</label>
+                    <input
+                    type="text"
+                    id="name"
+                    class="form-control"
+                    size="120"
+                    max="120"
+                    [ngModel]="advent?.name"
+                    name="name"
+                    #name="ngModel"
+                    required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="timestamp"><a href="https://www.unixtimestamp.com/" target="_blank">Timestamp</a>:</label>
+                    <input
+                    type="text"
+                    id="timestamp"
+                    class="form-control"
+                    size="120"
+                    max="255"
+                    [ngModel]="advent?.timestamp"
+                    name="timestamp"
+                    #timestamp="ngModel">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="description">Description:</label>
+                    <input
+                    type="text"
+                    id="description"
+                    class="form-control"
+                    size="120"
+                    max="255"
+                    [ngModel]="advent?.description"
+                    name="description"
+                    #description="ngModel">
+                </div>
+            </div>
+ 
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="link">Link:</label>
+                    <input
+                    type="text"
+                    id="link"
+                    class="form-control"
+                    size="150"
+                    max="255"
+                    [ngModel]="advent?.link"
+                    name="link"
+                    #link="ngModel">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-xs-12 btn-toolbar">
+                    <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+                    <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+
+            <div class="alert alert-danger" *ngIf="!f.valid && f.touched">The Advent name is required.</div>
+ 
+        </form>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+    <!--img [src]="advent.link" class="card-img-top"-->
+    <div class="card-body">
+      <h5 class="card-title">{{ advent.name }}</h5>
+      <p class="card-text">{{ advent.description }}</p>
+      <button class="btn btn-primary" routerLink="edit">Edit</button>
+      <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+</div>
+</div>

@@ -1,0 +1,31 @@
+<!--https://www.youtube.com/watch?v=jNHJ7zz16bY  https://www.youtube.com/embed/jNHJ7zz16bY?si=j_oMzHPKBaR8GlsH 
+https://www.youtube.com/embed/jNHJ7zz16bY?si=j_oMzHPKBaR8GlsH
+-->
+<h2>{{ advent.name }}</h2>
+<a class="list-group-item clearfix adventDiv"
+  routerLink="{{ advent.id }}"
+  routerLinkActive="active">
+
+  <!-- Display advent name here -->
+  Details
+</a>
+
+<!-- https://filipmolcik.com/error-unsafe-value-used-in-a-resource-url-context/ 
+https://www.youtube.com/embed/pxf79B-gtAY?si=UQLoNqzpaX7y0X5E -->
+<iframe width="560" height="315" [src]="advent.link | safe" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; 
+  autoplay; clipboard-write; 
+  encrypted-media; 
+  gyroscope; 
+  picture-in-picture; 
+  web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen></iframe>
+  
+<br>
+
+{{ advent.description }}
+
+<hr>
